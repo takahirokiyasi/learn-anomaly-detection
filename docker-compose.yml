@@ -1,0 +1,11 @@
+version: "3"
+services:
+  datascience-notebook-for-anomaly-detection:
+    build: .
+    container_name: datascience-notebook-for-anomaly-detection-container
+    volumes:
+      - ./work:/home/jovyan/work
+    ports:
+      - 8889:8888
+    restart: always
+    command: start.sh jupyter lab --NotebookApp.token=''
